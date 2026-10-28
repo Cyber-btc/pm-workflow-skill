@@ -1,4 +1,4 @@
 interface:
   display_name: "产品方案协作"
-  short_description: "让需求说明与可操作 Demo 同版迭代，检查实际行为和变更"
-  default_prompt: "使用 $pm-workflow，读取已有需求材料，制作或修改当前评审版的需求说明与 Demo，并报告实际检查结果。"
+  short_description: "用 HTML 评审入口联动需求说明与可操作 Demo"
+  default_prompt: "使用 $pm-workflow，把当前方案做成可阅读、可操作的 HTML 评审版本；修改时同步需求与 Demo，并报告实际检查结果。"
