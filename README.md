@@ -1,6 +1,6 @@
-# 产品方案协作 Skill
+# PRDRemix
 
-`pm-workflow` 帮助产品经理和 Agent 把需求说明与可操作 Demo 做成同一个评审版本。讨论可以从文档或页面开始；每次修改都要检查受影响的规则、角色、状态、交互和验收场景。
+**让需求与 Demo 一起迭代。** `prdremix` 帮助产品经理和 Agent 把需求说明与可操作 Demo 做成同一个评审版本。讨论可以从文档或页面开始；每次修改都要检查受影响的规则、角色、状态、交互和验收场景。
 
 它是一套协作指令，不是在线文档编辑器，也不包含自动同步需求与原型的程序。
 
@@ -27,24 +27,24 @@
 
 ## 安装到 Codex
 
-在 macOS 或 Linux 上，把仓库中的 `skills/pm-workflow/` 作为一个 Skill 目录放入 Codex 的个人 Skills 位置：
+在 macOS 或 Linux 上，把仓库中的 `skills/prdremix/` 作为一个 Skill 目录放入 Codex 的个人 Skills 位置：
 
 ```bash
-git clone https://github.com/Cyber-btc/pm-workflow-skill.git
+git clone https://github.com/Cyber-btc/prdremix.git
 mkdir -p "$HOME/.agents/skills"
-ln -s "$PWD/pm-workflow-skill/skills/pm-workflow" "$HOME/.agents/skills/pm-workflow"
+ln -s "$PWD/prdremix/skills/prdremix" "$HOME/.agents/skills/prdremix"
 ```
 
 请先确认目标路径不存在，再运行最后一行。Codex 支持从个人 Skills 目录发现 Skill，也支持符号链接；新安装的 Skill 没有出现时可重启 Codex。个人目录与发现方式以 [OpenAI Docs 的 Skills 说明](https://developers.openai.com/codex/skills)为准。
 
-不想安装时，也可以让 Agent 直接读取 [`SKILL.md`](skills/pm-workflow/SKILL.md) 和按需引用的阶段说明；这只是单次任务的参考，不等于安装。
+不想安装时，也可以让 Agent 直接读取 [`SKILL.md`](skills/prdremix/SKILL.md) 和按需引用的阶段说明；这只是单次任务的参考，不等于安装。
 
 ## 使用
 
-在 Codex 中调用 `$pm-workflow`，给出本轮要判断的事情和已有材料。例如：
+在 Codex 中调用 `$prdremix`，给出本轮要判断的事情和已有材料。例如：
 
 ```text
-使用 $pm-workflow。为一个完全虚构的社团工具盒借用需求制作业务评审版。
+使用 $prdremix。为一个完全虚构的社团工具盒借用需求制作业务评审版。
 成员要能查看、预约和取消；访客权限还没有决定。请把需求说明和
 可操作 Demo 做成同一版本，说明你的暂行假设，并实际检查主路径。
 ```
@@ -52,7 +52,7 @@ ln -s "$PWD/pm-workflow-skill/skills/pm-workflow" "$HOME/.agents/skills/pm-workf
 已有方案也可以从一条具体反馈继续：
 
 ```text
-使用 $pm-workflow。体验页面后，我决定访客可以看工具盒，但不能预约。
+使用 $prdremix。体验页面后，我决定访客可以看工具盒，但不能预约。
 请检查这会影响哪些需求规则、页面状态和验收场景，修改同一评审版本，
 走通相关路径，并说明旧版是否仍可回看。
 ```
@@ -66,17 +66,17 @@ ln -s "$PWD/pm-workflow-skill/skills/pm-workflow" "$HOME/.agents/skills/pm-workf
 3. **关联修改。** 从文档或 Demo 收到反馈后，沿角色、条件、规则、状态、文案和验收场景检查影响；涉及已确认业务规则时先指出冲突。
 4. **保存并验证。** 成套保留版本，实际打开页面、操作关键路径、核对规则与结果，再交付变化摘要和未决事项。
 
-业务评审、产品内部评审和技术评审的成熟度要求见[阶段参考](skills/pm-workflow/references/review-stages.md)。每个阶段都可以迭代多版；不要求先写完一份完整 PRD 才开始体验。
+业务评审、产品内部评审和技术评审的成熟度要求见[阶段参考](skills/prdremix/references/review-stages.md)。每个阶段都可以迭代多版；不要求先写完一份完整 PRD 才开始体验。
 
 ## 仓库结构
 
 ```text
-pm-workflow-skill/
+prdremix/
 ├── README.md                         # 项目介绍与上手方式
 ├── LICENSE                           # MIT 许可证
 ├── assets/workflow-illustration.svg  # 项目示意插图
 └── skills/
-    └── pm-workflow/
+    └── prdremix/
         ├── SKILL.md                  # 唯一的工作流主指令
         ├── agents/openai.yaml        # Codex 展示元数据
         └── references/review-stages.md
