@@ -30,7 +30,7 @@
 在 macOS 或 Linux 上，把仓库中的 `skills/prdremix/` 作为一个 Skill 目录放入 Codex 的个人 Skills 位置：
 
 ```bash
-git clone https://github.com/Cyber-btc/prdremix.git
+git clone https://github.com/CyberYip/prdremix.git
 mkdir -p "$HOME/.agents/skills"
 ln -s "$PWD/prdremix/skills/prdremix" "$HOME/.agents/skills/prdremix"
 ```
